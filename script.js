@@ -39,7 +39,7 @@ function generarFotos() {
         // Creamos el pie de foto
         const pie = document.createElement("div");
         pie.className = "pie-foto";
-        pie.innerText = "Nuestros recuerdos ❤️"; // Puedes cambiar esto si quieres textos distintos
+        pie.innerText = "Recuerdos ❤️"; // Puedes cambiar esto si quieres textos distintos
 
         img.onload = () => {
             div.appendChild(img);
@@ -50,13 +50,15 @@ function generarFotos() {
                 div.classList.add("aparecer");
                 
                 // SCROLL AUTOMÁTICO FORZADO
-                const yOffset = -120; 
+                // Hacemos scroll solo si NO es la última foto
+            if (index < nombresDeArchivos.length - 1) {
+                const yOffset = -100; 
                 const y = div.getBoundingClientRect().top + contenedorScroll.scrollTop + yOffset;
                 contenedorScroll.scrollTo({ top: y, behavior: 'smooth' });
+            }
 
-                // TIEMPO ENTRE FOTOS: 4.5 segundos (4500ms)
-                setTimeout(() => cargarFoto(index + 1), 4500);
-            }, 200);
+            setTimeout(() => cargarFoto(index + 1), 4500);
+        }, 200);
         };
 
         // SI UNA FOTO FALLA, SALTAMOS A LA SIGUIENTE PARA NO BLOQUEAR EL SHOW
@@ -73,11 +75,10 @@ function generarFotos() {
 let letraDedi = 0;
 function escribirDedicatoria() {
     const contenedor = document.getElementById("dedicatoria");
-    const scroll = document.getElementById("contenedor-scroll");
     if (letraDedi < textoDedicatoria.length) {
         contenedor.innerHTML += textoDedicatoria.charAt(letraDedi);
         letraDedi++;
-        scroll.scrollTo({ top: scroll.scrollHeight, behavior: 'smooth' });
+        // scroll.scrollTo(...)  <-- ESTA LÍNEA QUÍTALA O COMENTALA
         setTimeout(escribirDedicatoria, 70);
     } else {
         confetti({ particleCount: 500, spread: 160, origin: { y: 0.7 } });
