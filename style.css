@@ -1,0 +1,82 @@
+:root {
+    --pink-soft: #fff0f3;
+    --pink-dark: #ff8fa3;
+    --text-brown: #5d4037;
+}
+
+body, html {
+    margin: 0; padding: 0; background: var(--pink-soft);
+    color: var(--text-brown); font-family: 'Montserrat', sans-serif;
+    overflow: hidden; height: 100vh;
+}
+
+/* INICIO CORAZÓN */
+#seccion-inicial {
+    height: 100vh; display: flex; justify-content: center; align-items: center;
+    background: radial-gradient(circle, #ffffff 0%, #fff0f3 100%);
+}
+
+.contenedor-corazon { text-align: center; cursor: pointer; }
+
+.corazon {
+    font-size: 100px;
+    animation: latido 1.2s infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 143, 163, 0.5));
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.25); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.texto-guia {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem; color: var(--pink-dark); margin-top: 20px;
+}
+
+/* GALERÍA */
+#pagina { height: 100vh; position: relative; flex-direction: column; }
+
+.main-header { 
+    padding: 20px; text-align: center; z-index: 100;
+    background: rgba(255, 240, 243, 0.9); position: fixed; top: 0; width: 100%;
+}
+
+.glow-text {
+    font-family: 'Dancing Script', cursive; font-size: 2.5rem;
+    color: var(--pink-dark); margin: 0;
+}
+
+#contenedor-scroll { 
+    flex: 1; overflow-y: scroll; scroll-behavior: smooth; 
+    padding-top: 120px;
+}
+
+#galeria {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 100px; width: 100%;
+}
+
+.foto-item {
+    background: white; width: 280px; max-width: 85%;
+    padding: 12px 12px 35px 12px; border-radius: 2px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: rotate(var(--r)) translateY(30px);
+    opacity: 0; transition: all 0.9s ease-out;
+}
+
+.foto-item.aparecer { opacity: 1; transform: translateY(0) rotate(var(--r)); }
+
+.foto-item img { width: 100%; height: auto; border: 1px solid #eee; }
+
+#seccion-final { padding: 50px 30px 1200px 30px; text-align: center; }
+
+#dedicatoria {
+    font-family: 'Dancing Script', cursive; font-size: 2.2rem;
+    line-height: 1.6; color: var(--text-brown);
+}
+
+#contenedor-scroll::-webkit-scrollbar { width: 0; }
