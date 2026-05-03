@@ -1,7 +1,7 @@
 const nombresDeArchivos = [
-    "[001007].jpg", "[001016].jpg", "[001051].jpg", "[001056].jpg", "[001064].jpg",
-    "[001084].jpg", "[001128].jpg", "[001141].jpg", "[001142].jpg", "[001166].jpg",
-    "[001206].jpg", "[001217] 1.jpg", "[001224] 2.jpg", "[001226].jpg", "[001254].jpg",
+    "[001217] 1.jpg","[001224] 2.jpg","[001007].jpg", "[001016].jpg", "[001051].jpg", 
+    "[001056].jpg", "[001064].jpg","[001084].jpg", "[001128].jpg", "[001141].jpg", 
+    "[001142].jpg", "[001166].jpg","[001206].jpg",   "[001226].jpg", "[001254].jpg",
     "[001513].jpg", "[001864].jpg", "[001873].jpg", "[001971].jpg", "[002272].jpg",
     "[002769].jpg", "[007244].jpg", "[007250].jpg", "123456.jpg", "20130806_211759.jpg",
     "CIMG0038.JPG", "CIMG0245_1.JPG", "DSC07735.JPG", "DSC07987.JPG", "IMG_0600.JPG",
@@ -10,7 +10,7 @@ const nombresDeArchivos = [
     "IMG_0668.JPG", "IMG_0718.JPG", "IMG_0872.JPG", "IMG_1695.JPG", "Page2.jpeg"
 ];
 
-const textoDedicatoria = "Mamá, gracias por ser nuestro pilar, por tu amor infinito y por cada sonrisa. Eres el corazón de esta familia. ¡Te queremos muchísimo!";
+const textoDedicatoria = "Mamá, gracias por ser nuestro pilar, por tu amor y por tu sonrisa. Eres el corazón de esta familia. Te queremos muchísimo!";
 
 function empezarShow() {
     document.getElementById("musica").play();
