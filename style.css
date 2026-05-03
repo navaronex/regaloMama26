@@ -50,27 +50,46 @@ body, html {
     color: var(--pink-dark); margin: 0;
 }
 
+.subtitulo { margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.8; 
+}
+
 #contenedor-scroll { 
     flex: 1; overflow-y: scroll; scroll-behavior: smooth; 
-    padding-top: 120px;
+    padding-top: 100px;
 }
 
 #galeria {
     display: flex; flex-direction: column; align-items: center;
-    gap: 100px; width: 100%;
+    gap: 80px; width: 100%; padding-bottom: 50px;
 }
 
+/* FOTO GRANDE TIPO CINE */
 .foto-item {
-    background: white; width: 280px; max-width: 85%;
-    padding: 12px 12px 35px 12px; border-radius: 2px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transform: rotate(var(--r)) translateY(30px);
-    opacity: 0; transition: all 0.9s ease-out;
+    background: white; 
+    width: 85%; /* Mucho más grande para la tele */
+    max-width: 600px; 
+    padding: 15px 15px 15px 15px; 
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    opacity: 0; 
+    transform: translateY(50px);
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.foto-item.aparecer { opacity: 1; transform: translateY(0) rotate(var(--r)); }
+.foto-item.aparecer { opacity: 1; transform: translateY(0) ; }
 
-.foto-item img { width: 100%; height: auto; border: 1px solid #eee; }
+.foto-item img { width: 100%; height: auto; border-radius: 4px; display: block; }
+
+/* PIE DE FOTO */
+.pie-foto {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--pink-dark);
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
 
 #seccion-final { padding: 50px 30px 1200px 30px; text-align: center; }
 
